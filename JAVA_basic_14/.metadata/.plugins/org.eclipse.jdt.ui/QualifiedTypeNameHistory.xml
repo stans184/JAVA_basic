@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="ch13.domain.userInfo.UserInfo"/>
+    <fullyQualifiedTypeName name="ch13.domain.userInfo.dao.UserInfoDao"/>
+    <fullyQualifiedTypeName name="ch13.domain.userInfo.dao.oracle.UserInfoOracleDao"/>
+    <fullyQualifiedTypeName name="ch13.domain.userInfo.dao.mysql.UserInfoMySqlDao"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+</qualifiedTypeNameHistroy>

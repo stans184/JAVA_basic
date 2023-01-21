@@ -1,0 +1,7 @@
+package ch13.domain.userInfo.dao.oracle;
+
+import ch13.domain.userInfo.dao.UserInfoDao;
+
+public interface UserInfoOracleDao extends UserInfoDao {
+
+}

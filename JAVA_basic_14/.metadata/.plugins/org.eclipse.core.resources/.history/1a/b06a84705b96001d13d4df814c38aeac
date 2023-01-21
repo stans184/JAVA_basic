@@ -1,0 +1,9 @@
+package ch13.domain.userInfo;
+
+public class UserInfo {
+
+	private String userId;
+	private String userPW;
+	private String userName;
+	
+}

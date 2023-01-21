@@ -1,0 +1,8 @@
+package ch13.domain.userInfo;
+
+public class UserInfo {
+	public static void main(String[] args) {
+		
+	}
+	
+}

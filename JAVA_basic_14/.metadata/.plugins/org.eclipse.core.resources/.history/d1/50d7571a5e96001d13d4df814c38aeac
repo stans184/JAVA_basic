@@ -1,0 +1,29 @@
+package ch13.userInfo.web;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import ch13.domain.userInfo.UserInfo;
+import ch13.domain.userInfo.dao.UserInfoDao;
+
+public class UserInfoClient {
+
+	public static void main(String[] args) throws IOException {
+
+		FileInputStream file = new FileInputStream("db.properties");
+		
+		Properties prop = new Properties();
+		
+		prop.load(file);
+		
+		String dbType = prop.getProperty("DBTYPE");
+		
+		UserInfo userInfo = new UserInfo();
+		UserInfoDao userInfoDao = null;
+		
+		
+	}
+
+}

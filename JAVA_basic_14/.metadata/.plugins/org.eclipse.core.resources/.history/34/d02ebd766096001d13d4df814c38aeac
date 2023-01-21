@@ -1,0 +1,58 @@
+package ch13.userInfo.web;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.Scanner;
+
+import ch13.domain.userInfo.UserInfo;
+import ch13.domain.userInfo.dao.UserInfoDao;
+import ch13.domain.userInfo.dao.mysql.UserInfoMySqlDao;
+import ch13.domain.userInfo.dao.oracle.UserInfoOracleDao;
+
+public class UserInfoClient {
+
+	public static void main(String[] args) throws IOException {
+		// db가 현재 어떤 버전을 사용하는지 기록된 파일을 읽기 위해
+		FileInputStream file = new FileInputStream("db.properties");
+		// ??
+		Properties prop = new Properties();
+		
+		prop.load(file);
+		// db 를  String 변수로 받아들여 저장한
+		String dbType = prop.getProperty("DBTYPE");
+		file.close();
+		
+		// userInfo를 넣기 위해 instance 를 생성
+		UserInfo userInfo = new UserInfo();
+		// ID 와 PW를 입력해서 변수로 저장하고, 그 값으로 set 해준다 
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter ID : ");
+		String enterUserID = scan.nextLine();
+		System.out.print("Enter PW : ");
+		String enterUserPW = scan.nextLine();
+		
+		userInfo.setUserId(enterUserID);
+		userInfo.setUserPW(enterUserPW);
+		
+		// DB 가 현재 어떤 형태로 구동되는지 모름, 바뀔 수도 있음
+		// 따라서 new 하지 않고, null 타입으로 열어놓
+		UserInfoDao userInfoDao = null;
+		// DB 타입에 맞춰서 class를 바꿔가면서 instance 를 생성 
+		if (dbType.equals("ORACLE")) {
+			userInfoDao = new UserInfoOracleDao();
+		}
+		else if (dbType.equals("MYSQL")) {
+			userInfoDao = new UserInfoMySqlDao();
+		}
+		else {
+			System.out.println("DB error");
+		}
+		// input 된 ID, PW와 로딩된 DB를 바탕으로 method 진
+		userInfoDao.insertUserInfo(userInfo);
+		userInfoDao.updateUserInfo(userInfo);
+		userInfoDao.deleteUserInfo(userInfo);
+	}
+
+}
