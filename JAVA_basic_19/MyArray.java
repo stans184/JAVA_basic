@@ -59,7 +59,7 @@ public class MyArray {
             return ret;
         }
 
-        if (positoin < 0 || position > count -1) {
+        if (position < 0 || position > count -1) {
             System.out.println("index, out of range");
             return ret;
         }
@@ -70,7 +70,7 @@ public class MyArray {
             intArr[i] = intArr[i+1];
         }
         count -= 1;
-        
+        return ret;
     }
 
     // 배열에 들어있는 원소의 갯수를 반환
@@ -83,5 +83,32 @@ public class MyArray {
         if(count == 0){
             return true;
         }else return false;
+    }
+
+    public int getElement(int position){
+        if (position < 0 || position > count-1) {
+            System.out.println("Search position ERROR, Now List amount is " + count);
+            return ERROR_NUM;
+        }
+
+        return intArr[position];
+    }
+
+    public void printAll(){
+        if (count == 0) {
+            System.out.println("No Element in List");
+        }
+
+        for (int i = 0; i < count; i++) {
+            System.out.print(intArr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public void removeAll(){
+        for (int i = 0; i < count; i++) {
+            intArr[i] = 0;
+        }
+        count = 0;
     }
 }
