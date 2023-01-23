@@ -1,3 +1,4 @@
+package extendTest;
 
 
 public class GenericPrinterTest {
@@ -14,5 +15,7 @@ public class GenericPrinterTest {
         // 그래서 powder 변수 p 에다가도 형변환 없이 넣을 수 있음
         Powder p = powderPrinter.getMaterial();
         System.out.println(powderPrinter.toString());
+        
+        
     }
 }
