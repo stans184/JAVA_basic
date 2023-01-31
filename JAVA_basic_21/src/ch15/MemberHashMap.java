@@ -15,20 +15,25 @@ public class MemberHashMap {
 		hashMap.put(member.getMemberId(), member);
 	}
 	
-	public boolean removeMember(int memberId) {
-		if (hashMap.containsKey(memberId)) hashMap.remove(memberId);
-		System.out.println("No Element");
-		return false;
+	public boolean removeMember(int targetId) {
 		
+		if (hashMap.containsKey(targetId)) {
+			hashMap.remove(targetId);
+			return true;
+		}else {
+			System.out.println("No Element");
+			return false;
+		}
 	}
 	
 	public void showAllMember() {
 		Iterator<Integer> ir = hashMap.keySet().iterator();
-	
+		
 		while (ir.hasNext()) {
-			
 			int key = ir.next();
+			
 			Member member = hashMap.get(key);
+			
 			System.out.println(member);
 		}
 	}
