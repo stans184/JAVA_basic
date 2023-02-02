@@ -35,7 +35,7 @@ public class TravelTest {
 		// 2) 그들의 이름을 가져오고
 		// 3) 정렬해서 출력
 		System.out.println("Person whoes age is over 20");
-		csList.stream().filter(c -> c.getCustomerAge() >= 20).map(c -> c.getCustomerName()).sorted().forEach(s -> System.out.println(s));
+		csList.stream().filter(c -> c.getCustomerAge() >= 20).map(c -> c.getCustomerName()).sorted().forEach(s -> System.out.print(s + "\t"));
 	}
 
 }

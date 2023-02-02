@@ -1,0 +1,6 @@
+2월 02, 2023 8:55:33 오후 ch11.MyLogger warning
+경고: You have to input someone's name
+2월 02, 2023 8:55:33 오후 ch11.MyLogger warning
+경고: name too long, smaller than 4
+2월 02, 2023 8:55:33 오후 ch11.MyLogger fine
+미세: student name sended
